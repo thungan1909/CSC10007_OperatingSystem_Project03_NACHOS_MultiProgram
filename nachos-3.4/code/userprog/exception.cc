@@ -116,8 +116,8 @@ void ExceptionHandler(ExceptionType which)
             break;
 	case SC_Exit: {
 		int exitStatus = machine->ReadRegister(4);// doc dia chi exitStatus tu thanh ghi r4
-		int exitcode = ptable->ExitUpdate(exitStatus);// gan exitcode = ket qua khi thoat thread hien voi exitStatus truyen vao
-		machine->WriteRegister(2,exitcode);// ghi ket qua exitcode vao thanh ghi r2
+		int result = ptable->ExitUpdate(exitStatus);// gan bien result = ket qua khi thoat thread hien voi exitStatus truyen vao
+		machine->WriteRegister(2,result);// ghi ket qua bien res vao thanh ghi r2
 		IncreasePC();
 		break;
 	}
